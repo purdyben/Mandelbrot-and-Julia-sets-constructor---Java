@@ -21,15 +21,16 @@ public class MyComponent extends JComponent implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		System.out.println("here was a click ! ");
+
 		PointerInfo mousePointer = MouseInfo.getPointerInfo();
-		program.launcher.center = setCenter(mousePointer.getLocation().getX(), mousePointer.getLocation().getY());
+		program.launcher.center = setCenter(arg0.getX(), arg0.getY());//(mousePointer.getLocation().getX(), mousePointer.getLocation().getY());
 		program.launcher.scale = launcher.scale * 2;
 		program.launcher.limit += 20;
-		if(launcher.frameLauncher.getExtraInformation() == 1) {
-		program.launcher.calculateArray.calculate(1);
-		} 
-		else {
-			program.launcher.calculateArray.calculate(2);	
+
+		if (program.launcher.frameLauncher.getExtraInformation() == 1) {
+			program.launcher.calculateArray.calculate(1);
+		} else {
+			program.launcher.calculateArray.calculate(2);
 		}
 		Display.frameRedraw(JframeLauncher.frame.getGraphics());
 
@@ -58,8 +59,10 @@ public class MyComponent extends JComponent implements MouseListener {
 		// TODO Auto-generated method stub
 
 	}
+
 	/**
 	 * creates a new center bases on where you click
+	 * 
 	 * @param x
 	 * @param y
 	 * @return

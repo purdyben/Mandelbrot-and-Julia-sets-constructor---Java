@@ -50,11 +50,11 @@ public class Display extends JPanel {
 					//
 					// }
 					if (result < launcher.limit / 2) {
-						buffG.setColor(Color.getHSBColor((float) (Math.abs(2.7 - (result) / 255)), .6f, 1f)); // set the
-																											// color
+						buffG.setColor(Color.getHSBColor((float) (Math.abs(2.7 - (result) / 255)), .6f, 1f)); // set color
+																											
 					} 
 					else {
-						buffG.setColor(Color.getHSBColor((float) (Math.abs(1 - (result) / 255)), .9f, 1f)); // set the color
+						buffG.setColor(Color.getHSBColor((float) (Math.abs(1 - (result) / 255)), .9f, 1f)); // set color
 					}
 				}
 
