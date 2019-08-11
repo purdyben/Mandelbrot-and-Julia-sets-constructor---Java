@@ -21,10 +21,9 @@ public class MyComponent extends JComponent implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		System.out.println("here was a click ! ");
-
-		PointerInfo mousePointer = MouseInfo.getPointerInfo();
-		program.launcher.center = setCenter(arg0.getX(), arg0.getY());//(mousePointer.getLocation().getX(), mousePointer.getLocation().getY());
-		program.launcher.scale = launcher.scale * 2;
+		
+		program.launcher.center = setCenter(arg0.getX(), arg0.getY());
+		program.launcher.scale = program.launcher.scale * 2;
 		program.launcher.limit += 20;
 
 		if (program.launcher.frameLauncher.getExtraInformation() == 1) {
